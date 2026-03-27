@@ -39,6 +39,8 @@ const DEFAULT_PROFILE = {
   email: ""
 };
 
+const REGISTRATION_PATTERN = /^\d{2}[A-Z]\d{2}[A-Z]\d{2}[A-Z]\d$/;
+
 function getJSON(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
@@ -62,13 +64,14 @@ function normalizeStudent(input) {
 }
 
 function validateStudent(student) {
+  const validReg = REGISTRATION_PATTERN.test(student.reg);
   const validPhone = /^\d{10}$/.test(student.phone);
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(student.email);
-  const valid = Boolean(student.name && student.reg && validPhone && validEmail);
+  const valid = Boolean(student.name && validReg && validPhone && validEmail);
 
   return {
     valid,
-    message: valid ? "" : "Enter all fields correctly (valid 10-digit phone and email)."
+    message: valid ? "" : "Enter all fields correctly. Registration number must match 24B91A61H9 format, and phone must be 10 digits."
   };
 }
 
