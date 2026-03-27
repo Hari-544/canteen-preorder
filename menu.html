@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canteen Pre-order | Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="menu">
+<div class="bg-orb orb-a"></div>
+<div class="bg-orb orb-b"></div>
+
+<main class="page page-wide">
+<header class="topbar panel">
+<div>
+<p class="eyebrow">Today&apos;s Specials</p>
+<h1>Food Menu</h1>
+<p id="welcomeText" class="sub"></p>
+</div>
+<div class="top-actions">
+<a class="btn-link secondary" href="orders.html">My Orders</a>
+<a class="btn-link secondary" href="profile.html">Profile</a>
+<a class="btn-link" href="cart.html">View Cart <span id="cartCountBadge">0</span></a>
+</div>
+</header>
+
+<section class="panel controls">
+<input id="searchMenu" type="search" placeholder="Search dishes...">
+<div id="categoryFilters" class="chips"></div>
+</section>
+
+<section id="menu" class="grid"></section>
+
+<p id="menuMessage" class="message" aria-live="polite"></p>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

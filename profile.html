@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canteen Pre-order | Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="profile">
+<div class="bg-orb orb-a"></div>
+<div class="bg-orb orb-b"></div>
+
+<main class="page page-wide">
+<header class="topbar panel">
+<div>
+<p class="eyebrow">Student Profile</p>
+<h1>Manage Profile</h1>
+<p class="sub">Update your student details in one place for a smoother ordering experience.</p>
+</div>
+<div class="top-actions">
+<a class="btn-link secondary" href="orders.html">My Orders</a>
+<a class="btn-link secondary" href="menu.html">Back to Menu</a>
+<a class="btn-link" href="cart.html">Go to Cart</a>
+</div>
+</header>
+
+<section class="panel profile-shell">
+<div class="profile-layout">
+<article class="profile-card">
+<p class="eyebrow">Student Profile</p>
+<div class="profile-hero">
+<div id="profileAvatar" class="profile-avatar" aria-hidden="true">S</div>
+<div class="stack">
+<h2 id="profileNameCard">Student Name</h2>
+<p id="profileRegCard" class="sub profile-copy">Registration number will appear here.</p>
+</div>
+</div>
+<div class="profile-stats">
+<div class="stat-pill">
+<span class="stat-label">Phone</span>
+<strong id="profilePhoneCard">Add your phone</strong>
+</div>
+<div class="stat-pill">
+<span class="stat-label">Email</span>
+<strong id="profileEmailCard">Add your email</strong>
+</div>
+</div>
+</article>
+
+<article class="profile-editor">
+<div class="profile-editor-head">
+<div>
+<p class="eyebrow">Edit Details</p>
+<h2>Update your profile</h2>
+</div>
+<p class="sub profile-copy">Changes are saved instantly for your next orders and tickets.</p>
+</div>
+
+<form id="profileForm" class="stack">
+<div class="form-grid">
+<label class="field-card" for="profileName">
+<span>Full Name</span>
+<input id="profileName" placeholder="Enter your full name" required>
+</label>
+
+<label class="field-card" for="profileReg">
+<span>Registration No</span>
+<input id="profileReg" placeholder="22BCSXXXX" required>
+</label>
+
+<label class="field-card" for="profilePhone">
+<span>Phone</span>
+<input id="profilePhone" type="tel" inputmode="numeric" placeholder="10-digit mobile number" required>
+</label>
+
+<label class="field-card" for="profileEmail">
+<span>Email</span>
+<input id="profileEmail" type="email" placeholder="you@college.edu" required>
+</label>
+</div>
+
+<div class="actions">
+<button type="submit">Save Profile</button>
+<button type="button" id="profileResetBtn" class="secondary">Reset</button>
+</div>
+</form>
+
+<p id="profileMessage" class="message" aria-live="polite"></p>
+</article>
+</div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

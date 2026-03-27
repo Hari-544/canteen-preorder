@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canteen Pre-order | Cart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="cart">
+<div class="bg-orb orb-a"></div>
+<div class="bg-orb orb-b"></div>
+
+<main class="page page-wide">
+<header class="topbar panel">
+<div>
+<p class="eyebrow">Review Before Checkout</p>
+<h1>Your Cart</h1>
+</div>
+<div class="top-actions">
+<a class="btn-link secondary" href="orders.html">My Orders</a>
+<a class="btn-link secondary" href="profile.html">Profile</a>
+<a class="btn-link" href="menu.html">Back to Menu</a>
+</div>
+</header>
+
+<section class="panel" id="cart"></section>
+
+<section class="panel order-form">
+<label for="time">Pickup Time</label>
+<select id="time" required>
+<option value="" selected disabled>Select canteen slot</option>
+<option value="9:00 AM - 10:30 AM">9:00 AM - 10:30 AM</option>
+<option value="10:30 AM - 12:00 PM">10:30 AM - 12:00 PM</option>
+<option value="12:00 PM - 1:30 PM">12:00 PM - 1:30 PM</option>
+<option value="1:30 PM - 3:00 PM">1:30 PM - 3:00 PM</option>
+<option value="3:00 PM - 4:50 PM">3:00 PM - 4:50 PM</option>
+</select>
+
+<h3>Payment Method</h3>
+<label class="inline"><input type="radio" name="pay" value="Paid"> Pay Now</label>
+<label class="inline"><input type="radio" name="pay" value="Pay at Pickup" checked> Pay at Pickup</label>
+
+<div class="actions">
+<button id="clearCartBtn" type="button" class="secondary">Clear Cart</button>
+<button id="placeOrderBtn" type="button">Place Order</button>
+</div>
+
+<p id="cartMessage" class="message" aria-live="polite"></p>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
