@@ -5,7 +5,8 @@ const MENU_ITEMS = [
   { id: 4, name: "Paneer Roll", price: 80, category: "Snacks", prep: "Quick" },
   { id: 5, name: "Tea", price: 12, category: "Beverage", prep: "2 min" },
   { id: 6, name: "Cold Coffee", price: 45, category: "Beverage", prep: "Chilled" },
-  { id: 7, name: "Veg Noodles", price: 90, category: "Dinner", prep: "Hot & Tasty" },
+  { id: 7, name: "Veg Noodles", price: 90, category: "Noodles", prep: "Hot & Tasty" },
+  { id: 8, name: "Chicken Noodles", price: 110, category: "Noodles", prep: "Hot & Tasty" },
   { id:9, name: "chicken fried rice", price: 150, category: "Lunch", prep: "popular" },
   { id:10, name: "Egg Dosa", price: 70, category: "Breakfast", prep: "Fresh Tawa" },
   { id:11, name: "parotta", price: 25, category: "Breakfast", prep: "fast" },
@@ -39,7 +40,7 @@ const DEFAULT_PROFILE = {
   email: ""
 };
 
-const REGISTRATION_PATTERN = /^\d{2}[A-Z]\d{2}[A-Z]\d{2}[A-Z]\d$/;
+const REGISTRATION_PATTERN = /^(?=.*[A-Z])(?=.*\d)[A-Z0-9]{10}$/;
 
 function getJSON(key, fallback) {
   try {
@@ -71,7 +72,7 @@ function validateStudent(student) {
 
   return {
     valid,
-    message: valid ? "" : "Enter all fields correctly. Registration number must match 24B91A61H9 format, and phone must be 10 digits."
+    message: valid ? "" : "Enter all fields correctly. Registration number must be exactly 10 alphanumeric characters and include both letters and numbers. Phone must be 10 digits."
   };
 }
 
