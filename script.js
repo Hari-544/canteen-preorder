@@ -712,10 +712,12 @@ function initTicketPage() {
 
   holder.innerHTML = `
     <article class="ticket-card">
-      <p class="ticket-stamp">${order.ticketDateTime || "-"}</p>
       <div class="ticket-head">
         <h3>Order ID: ${order.id}</h3>
-        <p>Pickup Slot: ${order.time}</p>
+        <div class="ticket-head-meta">
+          <p class="ticket-stamp">${order.ticketDateTime || "-"}</p>
+          <p>Pickup Slot: ${order.time}</p>
+        </div>
       </div>
 
       <div class="ticket-body">

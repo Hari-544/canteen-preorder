@@ -312,7 +312,6 @@ button:disabled {
 }
 
 .ticket-card {
-  position: relative;
   border: 1px dashed rgba(16, 32, 39, 0.25);
   border-radius: 16px;
   padding: 18px;
@@ -321,9 +320,8 @@ button:disabled {
 }
 
 .ticket-stamp {
-  position: absolute;
-  right: 14px;
-  top: 10px;
+  display: inline-flex;
+  align-self: flex-end;
   font-size: 12px;
   color: #334155;
   background: #eef5f5;
@@ -342,9 +340,17 @@ button:disabled {
   margin-bottom: 10px;
 }
 
+.ticket-head-meta {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+  text-align: right;
+}
+
 .ticket-head p {
   color: #334155;
   font-weight: 600;
+  margin: 0;
 }
 
 .ticket-body {
@@ -651,16 +657,20 @@ button:disabled {
   }
 
   .ticket-stamp {
-    position: static;
-    display: inline-flex;
-    margin-bottom: 10px;
     max-width: 100%;
     word-break: break-word;
+    align-self: flex-start;
   }
 
   .ticket-head {
     flex-direction: column;
     gap: 6px;
+  }
+
+  .ticket-head-meta {
+    width: 100%;
+    justify-items: start;
+    text-align: left;
   }
 
   .ticket-head h3,
