@@ -1,50 +1,50 @@
 const MENU_ITEMS = [
   ---------------------TIFFINS-----------------------
 
-  { id: 1, name: "Upma", price: 20, category: "Breakfast", prep: "Fast" },
-  { id: 2, name: "Idly", price: 20, category: "Breakfast", prep: "Fast" },  
-  { id: 3, name: "Gari", price: 25, category: "Snacks", prep: "Quick" },
-  { id: 4, name: "bajji", price: 25, category: "Snacks", prep: "quick" },
-  { id: 5, name: "Punugu", price: 25, category: "Snacks", prep: "Quick" },
-  { id: 6, name: "Puri", price: 30, category: "Breakfast", prep: "Fast" },
-  { id: 7, name: "plain dosa", price: 30, category: "Breakfast", prep: "Fresh Tawa" },
-  { id: 8, name: "onion Dosa", price: 35, category: "Breakfast", prep: "Fresh Tawa" },
-  { id: 9, name: "Pesarattu", price: 35, category: "Breakfast", prep: "Fresh Tawa" },
-  { id: 10, name: "Rava Dosa", price: 35, category: "Breakfast", prep: "Fresh Tawa" },
-  { id: 11, name: "Egg Dosa", price: 40, category: "Breakfast", prep: "Fresh Tawa" },
-  { id: 12, name: "Masala Dosa", price: 40, category: "Breakfast", prep: "Fresh Tawa" },
-  { id: 13, name: "sambar idly", price: 40, category: "Breakfast", prep: "Fast" },
-  { id: 14, name: "Sambar Gari", price:40, category: "Snacks", prep: "Quick" },
-  { id: 15, name: "Upma Pesarattu", price: 45, category: "Breakfast", prep: "Fresh Tawa" },
-  { id:16, name: "chapati", price: 35, category: "Lunch", prep: "popular" },
-  { id:17, name: "parotta", price: 35, category: "Breakfast", prep: "fast" },
-  { id:18, name: "egg chapati", price: 45, category: "Lunch", prep: "popular" },
-  { id:19, name: "egg parotta", price: 45, category: "Breakfast", prep: "fast" },
-  { id:20, name: "Omelette", price: 20, category: "Breakfast", prep: "Fast" },
+  { id: 1, name: "Upma", price: 20, category: "Breakfast" },
+  { id: 2, name: "Idly", price: 20, category: "Breakfast" },  
+  { id: 3, name: "Gari", price: 25, category: "Snacks" },
+  { id: 4, name: "bajji", price: 25, category: "Snacks" },
+  { id: 5, name: "Punugu", price: 25, category: "Snacks" },
+  { id: 6, name: "Puri", price: 30, category: "Breakfast" },
+  { id: 7, name: "plain dosa", price: 30, category: "Breakfast" },
+  { id: 8, name: "onion Dosa", price: 35, category: "Breakfast" },
+  { id: 9, name: "Pesarattu", price: 35, category: "Breakfast" },
+  { id: 10, name: "Rava Dosa", price: 35, category: "Breakfast" },
+  { id: 11, name: "Egg Dosa", price: 40, category: "Breakfast" },
+  { id: 12, name: "Masala Dosa", price: 40, category: "Breakfast" },
+  { id: 13, name: "sambar idly", price: 40, category: "Breakfast" },
+  { id: 14, name: "Sambar Gari", price:40, category: "Snacks" },
+  { id: 15, name: "Upma Pesarattu", price: 45, category: "Breakfast" },
+  { id:16, name: "chapati", price: 35, category: "Lunch" },
+  { id:17, name: "parotta", price: 35, category: "Breakfast" },
+  { id:18, name: "egg chapati", price: 45, category: "Lunch" },
+  { id:19, name: "egg parotta", price: 45, category: "Breakfast" },
+  { id:20, name: "Omelette", price: 20, category: "Breakfast" },
 
   ----------------------MEALS&CURRIES-----------------------
 
-  { id: 21, name: "Meals", price: 70, category: "Lunch", prep: "Special" },
-  { id: 22, name: "Chicken Biryani", price: 150, category: "Lunch", prep: "Special" },
-  { id: 23, name: "Veg Curry", price: 25, category: "Lunch", prep: "Popular" },
-  { id: 24, name: "Chicken Curry", price: 70, category: "Lunch", prep: "Popular" },
+  { id: 21, name: "Meals", price: 70, category: "Lunch" },
+  { id: 22, name: "Chicken Biryani", price: 150, category: "Lunch" },
+  { id: 23, name: "Veg Curry", price: 25, category: "Lunch" },
+  { id: 24, name: "Chicken Curry", price: 70, category: "Lunch" },
 
   -----------------------FAST FOOD-----------------------
   
-  { id: 25, name: "Veg fried rice", price: 60, category: "Lunch", prep: "Popular" },
-  { id: 26, name: "Egg Fried Rice", price: 70, category: "Lunch", prep: "Popular" },
-  { id: 27, name: "chicken fried rice", price: 80, category: "Lunch", prep: "popular" },
-  { id: 28, name: "Roast Fried Rice", price: 120, category: "Lunch", prep: "Popular" },
-  { id: 29, name: "Veg Noodles", price: 60, category: "Noodles", prep: "Hot & Tasty" },
-  { id: 30, name: "Egg Noodles", price: 70, category: "Noodles", prep: "Hot & Tasty" },
-  { id: 31, name: "Chicken Noodles", price: 80, category: "Noodles", prep: "Hot & Tasty" },
+  { id: 25, name: "Veg fried rice", price: 60, category: "Lunch" },
+  { id: 26, name: "Egg Fried Rice", price: 70, category: "Lunch" },
+  { id: 27, name: "chicken fried rice", price: 80, category: "Lunch" },
+  { id: 28, name: "Roast Fried Rice", price: 120, category: "Lunch" },
+  { id: 29, name: "Veg Noodles", price: 60, category: "Noodles" },
+  { id: 30, name: "Egg Noodles", price: 70, category: "Noodles" },
+  { id: 31, name: "Chicken Noodles", price: 80, category: "Noodles" },
 
   ------------------------TEA&COFFEE-----------------------
 
-  { id: 32, name: "Tea (Parcel)", price: 15, category: "Beverage", prep: "2 min" },
-  { id: 33, name: "Coffee (Parcel)", price: 20, category: "Beverage", prep: "2 min" },
-  { id: 34, name: "Horlicks (Parcel)", price: 25, category: "Beverage", prep: "2 min" },
-  { id: 35, name: "Boost (Parcel)", price: 25, category: "Beverage", prep: "2 min" },
+  { id: 32, name: "Tea (Parcel)", price: 15, category: "Beverage" },
+  { id: 33, name: "Coffee (Parcel)", price: 20, category: "Beverage" },
+  { id: 34, name: "Horlicks (Parcel)", price: 25, category: "Beverage" },
+  { id: 35, name: "Boost (Parcel)", price: 25, category: "Beverage" },
 ];
 
 const STORAGE_KEYS = {
@@ -422,7 +422,7 @@ function renderMenu(filterText, filterCategory) {
       return `
         <article class="card">
           <h3>${item.name}</h3>
-          <p class="meta">${item.category} • ${item.prep}</p>
+          <p class="meta">${item.category}</p>
           <div class="price-row">
             <span class="price">${formatCurrency(item.price)}</span>
             <button type="button" data-add-id="${item.id}">Add</button>
