@@ -317,6 +317,7 @@ button:disabled {
   border-radius: 16px;
   padding: 18px;
   background: linear-gradient(180deg, #fffef8 0%, #fffbef 100%);
+  overflow: hidden;
 }
 
 .ticket-stamp {
@@ -332,6 +333,10 @@ button:disabled {
 }
 
 .ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
   border-bottom: 1px dashed var(--line);
   padding-bottom: 10px;
   margin-bottom: 10px;
@@ -369,6 +374,16 @@ button:disabled {
   margin-top: 10px;
   font-size: 13px;
   color: #475569;
+  text-align: center;
+}
+
+.ticket-actions {
+  margin-top: 18px;
+}
+
+.ticket-actions .btn-link,
+.ticket-actions button {
+  min-width: 150px;
 }
 
 .history-grid {
@@ -595,6 +610,10 @@ button:disabled {
     padding: 14px;
   }
 
+  .panel {
+    padding: 16px;
+  }
+
   .topbar {
     flex-direction: column;
     align-items: flex-start;
@@ -620,6 +639,57 @@ button:disabled {
   .actions button,
   .actions .btn-link {
     flex: 1;
+  }
+
+  .ticket-panel {
+    padding: 16px 14px 18px;
+  }
+
+  .ticket-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .ticket-stamp {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 10px;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  .ticket-head {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ticket-head h3,
+  .ticket-total h3 {
+    font-size: 18px;
+  }
+
+  .ticket-body {
+    gap: 9px;
+  }
+
+  .ticket-items {
+    padding-left: 16px;
+    gap: 6px;
+  }
+
+  .ticket-note {
+    line-height: 1.5;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ticket-actions .btn-link,
+  .ticket-actions button {
+    width: 100%;
+    min-width: 0;
   }
 
   .profile-layout,
