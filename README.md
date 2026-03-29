@@ -1,109 +1,184 @@
-# Canteen Pre-Order System
+# 🍔 Canteen Pre-Order System
 
-## Overview
+## 📌 Overview
 
-The **Canteen Pre-Order System** is a browser-based food ordering app for students. It lets a user enter student details, browse the canteen menu, add items to a cart, choose a pickup slot, place an order, and print a pickup ticket.
+The **Canteen Pre-Order System** is a frontend-based web application that allows students to order food from the college canteen in advance. This helps reduce waiting time and enables faster food pickup.
 
-The app is built with **HTML**, **CSS**, and **Vanilla JavaScript** and uses **localStorage** and **sessionStorage** to keep data in the browser.
+This application is fully built using **HTML, CSS, and JavaScript**, and all data is handled using **browser storage (localStorage & sessionStorage)** without any backend.
 
-## Current Features
+---
 
-### Student Details and Validation
+## 🚀 Features
 
-- Collects name, registration number, phone number, and email
-- Validates registration number as exactly 10 alphanumeric characters containing both letters and numbers
-- Validates phone number as exactly 10 digits
-- Validates email format before saving
+### 👤 Student Details Entry
 
-### Menu and Cart
+* Students enter:
 
-- Displays menu items across categories like Breakfast, Meals, Biryani, Fast Food, Noodles, and Beverage
-- Supports dish search and category filters
-- Adds items to cart and updates quantities
-- Calculates item count and total automatically
+  * Name
+  * Registration Number
+  * Phone Number
+  * Email
+* Data is validated and stored in `localStorage`
 
-### Order Placement
+---
 
-- Requires the user to choose a pickup slot before placing an order
-- Supports `Pay Now` and `Pay at Pickup`
-- Generates a unique order ID for each order
+### 🍽️ Menu Browsing
 
-### Ticket and Order History
+* Displays available food items
+* Organized using categories
+* Search functionality for quick access
+* Add items to cart
 
-- Shows the ticket after payment/order placement
-- Displays order ID, date/time, student details, payment method, ordered items, and total
-- Supports printing the ticket
-- Supports downloading the ticket as a text file
-- Keeps order history and allows reopening previous tickets
-- Includes a **print-only QR code** that contains order and student details for scanning
+---
 
-### Profile Management
+### 🛒 Cart Management
 
-- Lets the user edit saved student details
-- Updates saved orders with the latest profile data
-- Shows a live preview on the profile page
+* Add items to cart
+* Increase / decrease quantity
+* Remove items
+* Automatic total calculation
 
-## Tech Stack
+---
 
-- **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
-- **localStorage**
-- **sessionStorage**
+### ⏰ Pickup Time Selection
 
-## Project Files
+* User selects preferred pickup time
+* Helps reduce waiting queues in canteen
 
-```text
+---
+
+### 💳 Payment Options
+
+* Pay Now
+* Pay at Pickup
+
+---
+
+### 🎟️ Order Placement & Ticket Generation
+
+* Generates a unique Order ID
+* Displays:
+
+  * Student details
+  * Ordered items
+  * Total amount
+  * Pickup time
+  * Payment status
+
+---
+
+### 📜 Order History
+
+* Stores all previous orders
+* View past tickets
+* Open specific order details
+
+---
+
+### 👤 Profile Management
+
+* Update student details
+* Syncs updated data across orders
+
+---
+
+## 🛠️ Tech Stack
+
+* **HTML5** – Structure
+* **CSS3** – Styling
+* **JavaScript (Vanilla)** – Functionality
+* **localStorage** – Persistent data
+* **sessionStorage** – Temporary state
+
+---
+
+## 📂 Project Structure
+
+```id="xz0pxw"
 CANTEEN PRE-ORDER/
-|-- index.html
-|-- menu.html
-|-- cart.html
-|-- ticket.html
-|-- orders.html
-|-- profile.html
-|-- style.css
-`-- script.js
+│
+├── index.html        # Student details page
+├── menu.html         # Food menu page
+├── cart.html         # Cart & checkout
+├── ticket.html       # Order ticket
+├── orders.html       # Order history
+├── profile.html      # Profile management
+├── style.css         # Styling
+└── script.js         # Application logic
 ```
 
-## Storage Used
+---
+
+## 🔄 Application Workflow
+
+1. **Student enters details**
+
+   * Stored in `localStorage` under `student`
+
+2. **Menu is displayed**
+
+   * Items loaded from JavaScript array
+   * User adds items to cart
+
+3. **Cart is managed**
+
+   * Quantity updates and total calculation
+
+4. **Order is placed**
+
+   * Pickup time + payment method selected
+   * Order object is created
+
+5. **Ticket is generated**
+
+   * Shows complete order summary
+
+6. **Order history is stored**
+
+   * Saved in `localStorage` under `orders`
+
+---
+
+## 💾 Storage Design
 
 ### localStorage
 
-- `student`: saved student profile
-- `cart`: current cart items
-- `order`: latest placed order
-- `orders`: order history
+* `student` → Student details
+* `cart` → Current cart items
+* `order` → Latest order
+* `orders` → Order history
 
 ### sessionStorage
 
-- `selectedOrderId`: selected order for ticket view
-- `flash`: temporary page messages
+* `selectedOrderId` → Selected order for ticket view
 
-## Application Flow
+---
 
-1. The student enters details on `index.html`.
-2. The app validates and saves the profile.
-3. The student browses `menu.html`, searches dishes, filters categories, and adds items to the cart.
-4. On `cart.html`, the student updates quantities, chooses a pickup slot, and selects a payment method.
-5. After placing the order, the app saves the order and opens `ticket.html`.
-6. The ticket can be printed, and `orders.html` keeps earlier orders available for viewing and download.
-7. The `profile.html` page lets the user update saved profile details later.
+## 🌍 Live Demo
 
-## Notes
+👉 https://hari-544.github.io/canteen-preorder/
 
-- The QR code is not shown in normal ticket view.
-- The QR code appears only in the **print layout**.
-- The QR image is generated through an online QR service, so internet access is needed when printing if the QR must appear.
-- Currency is displayed as `Rs` to avoid character-encoding issues.
+---
 
-## Future Improvements
+## 🎯 Future Improvements
 
-- Backend integration
-- Real payment gateway integration
-- Admin dashboard for canteen staff
-- Scanner-based order verification at pickup
+* Backend integration (Node.js / Firebase)
+* Online payment gateway
+* Real-time order tracking
+* Admin dashboard
+* QR code-based pickup system
 
-## Author
+---
 
-- **Hari Krishna**
-- B.Tech (AI & ML Student)
+## 👨‍💻 Author
+
+**Hari Krishna**
+B.Tech (AI & ML Student)
+
+---
+
+## 📢 Conclusion
+
+This project demonstrates a real-world food ordering workflow implemented entirely using frontend technologies. It improves efficiency in canteen services and showcases practical web development skills.
+
+---
