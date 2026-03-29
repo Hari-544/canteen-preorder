@@ -125,7 +125,7 @@ function setMessage(id, text, isError) {
 }
 
 function formatCurrency(value) {
-  return `₹${value}`;
+  return `Rs ${value}`;
 }
 
 function getCart() {
