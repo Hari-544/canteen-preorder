@@ -193,6 +193,32 @@ function buildTicketText(order) {
   ].join("\n");
 }
 
+function buildTicketScanPayload(order) {
+  const itemLines = order.cart.map(function (item) {
+    return `${item.name} x ${item.qty} = ${formatCurrency(item.price * item.qty)}`;
+  });
+
+  return [
+    "Canteen Pre-order Ticket",
+    `Order ID: ${order.id}`,
+    `Date/Time: ${order.ticketDateTime || "-"}`,
+    `Student: ${order.student.name}`,
+    `Registration: ${order.student.reg}`,
+    `Phone: ${order.student.phone || "-"}`,
+    `Email: ${order.student.email || "-"}`,
+    `Pickup Slot: ${order.time}`,
+    `Payment: ${order.pay}`,
+    "Items:",
+    itemLines.join("\n"),
+    `Total: ${formatCurrency(order.total)}`
+  ].join("\n");
+}
+
+function buildTicketQRUrl(order) {
+  const payload = encodeURIComponent(buildTicketScanPayload(order));
+  return `https://api.qrserver.com/v1/create-qr-code/?size=420x420&margin=12&data=${payload}`;
+}
+
 function downloadTicket(order) {
   const ticketText = buildTicketText(order);
   const blob = new Blob([ticketText], { type: "text/plain" });
@@ -730,6 +756,19 @@ function initTicketPage() {
 
         <div class="ticket-total">
           <h3>Total Paid: ${formatCurrency(order.total)}</h3>
+        </div>
+      </div>
+
+      <div class="ticket-scan">
+        <img
+          class="ticket-qr"
+          src="${buildTicketQRUrl(order)}"
+          alt="Scannable QR code with order details for ${order.id}"
+          loading="eager"
+        >
+        <div class="ticket-scan-copy">
+          <h4>Scan For Order Details</h4>
+          <p>Scan this code to view the student details and items included in this order.</p>
         </div>
       </div>
     </article>
