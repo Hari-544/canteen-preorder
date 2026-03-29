@@ -1,11 +1,10 @@
 const MENU_ITEMS = [
   // Tiffins
-
   { id: 1, name: "Upma", price: 20, category: "Breakfast" },
   { id: 2, name: "Idly", price: 20, category: "Breakfast" },  
-  { id: 3, name: "Gari", price: 25, category: "Snacks" },
-  { id: 4, name: "bajji", price: 25, category: "Snacks" },
-  { id: 5, name: "Punugu", price: 25, category: "Snacks" },
+  { id: 3, name: "Gari", price: 25, category: "Breakfast" },
+  { id: 4, name: "bajji", price: 25, category: "Breakfast" },
+  { id: 5, name: "Punugu", price: 25, category: "Breakfast" },
   { id: 6, name: "Puri", price: 30, category: "Breakfast" },
   { id: 7, name: "plain dosa", price: 30, category: "Breakfast" },
   { id: 8, name: "onion Dosa", price: 35, category: "Breakfast" },
@@ -14,37 +13,31 @@ const MENU_ITEMS = [
   { id: 11, name: "Egg Dosa", price: 40, category: "Breakfast" },
   { id: 12, name: "Masala Dosa", price: 40, category: "Breakfast" },
   { id: 13, name: "sambar idly", price: 40, category: "Breakfast" },
-  { id: 14, name: "Sambar Gari", price:40, category: "Snacks" },
+  { id: 14, name: "Sambar Gari", price:40, category: "Breakfast" },
   { id: 15, name: "Upma Pesarattu", price: 45, category: "Breakfast" },
-  { id:16, name: "chapati", price: 35, category: "Lunch" },
+  { id:16, name: "chapati", price: 35, category: "Breakfast" },
   { id:17, name: "parotta", price: 35, category: "Breakfast" },
-  { id:18, name: "egg chapati", price: 45, category: "Lunch" },
+  { id:18, name: "egg chapati", price: 45, category: "Breakfast" },
   { id:19, name: "egg parotta", price: 45, category: "Breakfast" },
   { id:20, name: "Omelette", price: 20, category: "Breakfast" },
-
   // Meals & curries
-
-  { id: 21, name: "Meals", price: 70, category: "Lunch" },
-  { id: 22, name: "Chicken Biryani", price: 150, category: "Lunch" },
-  { id: 23, name: "Veg Curry", price: 25, category: "Lunch" },
-  { id: 24, name: "Chicken Curry", price: 70, category: "Lunch" },
-
+  { id: 21, name: "Meals", price: 70, category: "Meals" },
+  { id: 22, name: "Chicken Biryani", price: 150, category: "Biryani" },
+  { id: 23, name: "Veg Curry", price: 25, category: "Meals" },
+  { id: 24, name: "Chicken Curry", price: 70, category: "Meals" },
   // Fast food
-  
-  { id: 25, name: "Veg fried rice", price: 60, category: "Lunch" },
-  { id: 26, name: "Egg Fried Rice", price: 70, category: "Lunch" },
-  { id: 27, name: "chicken fried rice", price: 80, category: "Lunch" },
-  { id: 28, name: "Roast Fried Rice", price: 120, category: "Lunch" },
+  { id: 25, name: "Veg fried rice", price: 60, category: "Fast Food" },
+  { id: 26, name: "Egg Fried Rice", price: 70, category: "Fast Food" },
+  { id: 27, name: "chicken fried rice", price: 80, category: "Fast Food" },
+  { id: 28, name: "Roast Fried Rice", price: 120, category: "Fast Food" },
   { id: 29, name: "Veg Noodles", price: 60, category: "Noodles" },
   { id: 30, name: "Egg Noodles", price: 70, category: "Noodles" },
   { id: 31, name: "Chicken Noodles", price: 80, category: "Noodles" },
-
   // Tea & coffee
-
   { id: 32, name: "Tea (Parcel)", price: 15, category: "Beverage" },
   { id: 33, name: "Coffee (Parcel)", price: 20, category: "Beverage" },
   { id: 34, name: "Horlicks (Parcel)", price: 25, category: "Beverage" },
-  { id: 35, name: "Boost (Parcel)", price: 25, category: "Beverage" },
+  { id: 35, name: "Boost (Parcel)", price: 25, category: "Beverage" }
 ];
 
 const STORAGE_KEYS = {
