@@ -1,5 +1,5 @@
 const MENU_ITEMS = [
-  ---------------------TIFFINS-----------------------
+  // Tiffins
 
   { id: 1, name: "Upma", price: 20, category: "Breakfast" },
   { id: 2, name: "Idly", price: 20, category: "Breakfast" },  
@@ -22,14 +22,14 @@ const MENU_ITEMS = [
   { id:19, name: "egg parotta", price: 45, category: "Breakfast" },
   { id:20, name: "Omelette", price: 20, category: "Breakfast" },
 
-  ----------------------MEALS&CURRIES-----------------------
+  // Meals & curries
 
   { id: 21, name: "Meals", price: 70, category: "Lunch" },
   { id: 22, name: "Chicken Biryani", price: 150, category: "Lunch" },
   { id: 23, name: "Veg Curry", price: 25, category: "Lunch" },
   { id: 24, name: "Chicken Curry", price: 70, category: "Lunch" },
 
-  -----------------------FAST FOOD-----------------------
+  // Fast food
   
   { id: 25, name: "Veg fried rice", price: 60, category: "Lunch" },
   { id: 26, name: "Egg Fried Rice", price: 70, category: "Lunch" },
@@ -39,7 +39,7 @@ const MENU_ITEMS = [
   { id: 30, name: "Egg Noodles", price: 70, category: "Noodles" },
   { id: 31, name: "Chicken Noodles", price: 80, category: "Noodles" },
 
-  ------------------------TEA&COFFEE-----------------------
+  // Tea & coffee
 
   { id: 32, name: "Tea (Parcel)", price: 15, category: "Beverage" },
   { id: 33, name: "Coffee (Parcel)", price: 20, category: "Beverage" },

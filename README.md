@@ -1,168 +1,109 @@
-# 🍔 Canteen Pre-Order System (Frontend)
+# Canteen Pre-Order System
 
-## 📌 Overview
+## Overview
 
-The **Canteen Pre-Order System** is a frontend web application that allows students to pre-order food from their college canteen before reaching the location. This helps reduce waiting time and improves efficiency in food collection.
+The **Canteen Pre-Order System** is a frontend web application that lets students pre-order food from their college canteen before reaching the counter. It helps reduce waiting time and makes food pickup smoother.
 
-This project is built using **HTML, CSS, and JavaScript**, and runs entirely in the browser using **localStorage** for data management.
+This project is built with **HTML, CSS, and JavaScript** and stores data in the browser using **localStorage** and **sessionStorage**.
 
----
+## Features
 
-## 🚀 Features
+### Student Registration
 
-### 👤 Student Registration
+- Enter name, registration number, phone, and email
+- Store student data in browser local storage
 
-* Enter Name, Registration Number, Phone, and Email
-* Data is stored in browser localStorage
+### Food Menu
 
-### 🍽️ Food Menu
+- Browse available food items
+- Search dishes by name
+- Filter dishes by category
+- Add items to cart
 
-* Displays available food items
-* Search and filter functionality
-* Add items to cart
+### Cart Management
 
-### 🛒 Cart Management
+- Increase or decrease item quantity
+- Remove items from the cart
+- See the total update automatically
 
-* Add/remove items
-* Increase/decrease quantity
-* Automatic total calculation
+### Pickup Scheduling
 
-### ⏰ Pickup Scheduling
+- Choose a pickup time slot before placing the order
 
-* Select preferred pickup time
-* Reduces waiting time at canteen
+### Payment Options
 
-### 💳 Payment Options
+- Pay now
+- Pay at pickup
 
-* Pay Now
-* Pay at Pickup
+### Order Ticket
 
-### 🎟️ Order Ticket Generation
+- Generate a unique order ID
+- Show student details, ordered items, total amount, pickup slot, and payment method
+- Print or download the order ticket
 
-* Unique Order ID
-* Student details
-* Ordered items
-* Total amount
-* Pickup time
-* Payment status
+### Order History
 
-### 📜 Order History
+- View previously placed orders
+- Open past tickets
+- Download tickets as text files
 
-* View previous orders
-* Open past tickets
-* Download ticket as text file
+### Profile Management
 
-### 👤 Profile Management
+- Update student details
+- Sync profile details with saved orders
 
-* Update student details
-* Syncs with orders
+## Tech Stack
 
----
+- **HTML5** for structure
+- **CSS3** for styling
+- **Vanilla JavaScript** for functionality
+- **localStorage** and **sessionStorage** for data storage
 
-## 🛠️ Tech Stack
+## Project Structure
 
-* **HTML5** – Structure
-* **CSS3** – Styling
-* **JavaScript (Vanilla)** – Logic & functionality
-* **localStorage & sessionStorage** – Data storage
-
----
-
-## 📂 Project Structure
-
-```
+```text
 CANTEEN PRE-ORDER/
-│
-├── index.html        # Student details page
-├── menu.html         # Food menu page
-├── cart.html         # Cart & checkout page
-├── ticket.html       # Order ticket page
-├── orders.html       # Order history page
-├── profile.html      # Profile management
-├── style.css         # Styles
-└── script.js         # Main JavaScript logic
+|-- index.html
+|-- menu.html
+|-- cart.html
+|-- ticket.html
+|-- orders.html
+|-- profile.html
+|-- style.css
+`-- script.js
 ```
 
----
+## Application Workflow
 
-## 🔄 Application Workflow
+1. Student enters details, which are saved in `localStorage`.
+2. The user browses the menu and adds items to the cart.
+3. The cart page lets the user update quantities and review totals.
+4. The user selects a pickup slot and payment method, then places the order.
+5. A ticket is generated with the order summary.
+6. Orders are saved and can be revisited from the order history page.
 
-1. **Student enters details**
+## Storage Design
 
-   * Data stored in localStorage (`student`)
+### localStorage
 
-2. **Browse menu**
+- `student`: student details
+- `cart`: current cart items
+- `order`: latest order
+- `orders`: order history
 
-   * Menu loaded from predefined items
-   * Items added to cart (`cart`)
+### sessionStorage
 
-3. **Cart management**
+- `selectedOrderId`: currently selected order for ticket view
 
-   * Update quantities
-   * Calculate total
+## Future Enhancements
 
-4. **Place order**
+- Backend integration
+- Online payment gateway support
+- Real-time order tracking
+- Admin dashboard for canteen staff
+- QR code based pickup flow
 
-   * Select pickup time & payment method
-   * Order object created
+## Author
 
-5. **Ticket generation**
-
-   * Displays complete order summary
-
-6. **Order history**
-
-   * Stored in `orders`
-   * Can view previous tickets
-
----
-
-## 💾 Storage Design
-
-### localStorage:
-
-* `student` → Student details
-* `cart` → Current cart items
-* `order` → Latest order
-* `orders` → Order history
-
-### sessionStorage:
-
-* `selectedOrderId` → For viewing specific ticket
-
----
-
-## 🎯 Future Enhancements
-
-* Backend integration (Node.js / Firebase)
-* Online payment gateway integration
-* Real-time order tracking
-* Admin dashboard for canteen staff
-* QR code for order pickup
-
----
-
-## 🌍 Live Demo
-
-(You can add your GitHub Pages link here)
-
----
-
-## 📸 Screenshots
-
-(Add screenshots of your project here)
-
----
-
-## 🙌 Author
-
-* **Hari Krishna**
-* B.Tech (AI & ML Student)
-
----
-
-## 📢 Conclusion
-
-This project demonstrates how a real-world canteen ordering system can be implemented using only frontend technologies. It improves user convenience and showcases practical web development skills.
-
----
+- **Hari Krishna**
+- B.Tech (AI & ML Student)
