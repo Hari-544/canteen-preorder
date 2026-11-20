@@ -1,1 +1,14 @@
-import {NavLink,Outlet} from "react-router-dom";import {useAuth} from "../context/AuthContext";export default function Layout(){const{user,logout}=useAuth();return <div className="app-shell"><header className="topbar"><NavLink className="brand" to="/">🍽️ Campus<span>Canteen</span></NavLink><nav><NavLink to="/">Menu</NavLink><NavLink to="/orders">{user?.role==="admin"?"All Orders":"My Orders"}</NavLink><NavLink to="/todo">To-do</NavLink></nav><div className="account">{user?<><span>{user.name}</span>{user.role==="admin"&&<span className="status">Admin</span>}<button className="btn btn-quiet" onClick={()=>void logout()}>Sign out</button></>:<NavLink className="btn" to="/login">Sign in</NavLink>}</div></header><main className="content"><Outlet/></main><footer>Campus Canteen · Full Stack Development–2 practical project</footer></div>}
+import {NavLink,Outlet} from "react-router-dom";
+import {useAuth} from "../context/AuthContext";
+export default function Layout(){
+ const{user,logout}=useAuth();
+ return <div className="app-shell">
+  <header className="topbar">
+   <NavLink className="brand" to="/">🍽️ Campus<span>Canteen</span></NavLink>
+   <nav><NavLink to="/">Menu</NavLink><NavLink to="/orders">{user?.role==="admin"?"All Orders":"My Orders"}</NavLink>{user?.role!=="admin"&&<NavLink to="/todo">To-do</NavLink>}</nav>
+   <div className="account">{user?<><NavLink to="/profile" className="profile-link">My Profile</NavLink><span>{user.name}</span>{user.role==="admin"&&<span className="status">Admin</span>}<button className="btn btn-quiet" onClick={()=>void logout()}>Sign out</button></>:<NavLink className="btn" to="/login">Sign in</NavLink>}</div>
+  </header>
+  <main className="content"><Outlet/></main>
+  <footer>Campus Canteen · Full Stack Development–2 practical project</footer>
+ </div>;
+}
