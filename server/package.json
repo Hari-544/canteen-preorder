@@ -2,8 +2,30 @@
   "name": "canteen-preorder-server",
   "version": "2.0.0",
   "private": true,
-  "scripts": { "dev": "tsx watch src/server.ts", "build": "tsc -p tsconfig.json", "start": "node dist/server.js", "seed": "tsx src/seed.ts" },
-  "dependencies": { "bcryptjs": "^2.4.3", "connect-mongo": "^5.1.0", "cors": "^2.8.5", "dotenv": "^16.4.7", "express": "^5.1.0", "express-session": "^1.18.1",
-    "ejs": "^3.1.10", "mongoose": "^8.9.5" },
-  "devDependencies": { "@types/bcryptjs": "^2.4.6", "@types/cors": "^2.8.17", "@types/express": "^5.0.0", "@types/express-session": "^1.18.1", "@types/node": "^22.10.5", "tsx": "^4.19.2", "typescript": "^5.7.3" }
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "seed": "tsx src/seed.ts",
+    "make-admin": "tsx src/make-admin.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "ejs": "^3.1.10",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.1",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
 }
