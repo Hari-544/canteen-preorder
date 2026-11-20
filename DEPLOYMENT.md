@@ -15,7 +15,7 @@ Create a new **Web Service** and connect this repository.
 | Branch | `main` |
 | Root Directory | leave blank |
 | Runtime | Node |
-| Build Command | `npm install && npm --prefix client install && npm --prefix server install && npm run build` |
+| Build Command | `npm install --include=dev && npm --prefix client install --include=dev && npm --prefix server install --include=dev && npm run build` |
 | Start Command | `npm start` |
 | Health Check Path | `/api/health` |
 
