@@ -24,11 +24,11 @@ This branch upgrades the original HTML/CSS/Vanilla JavaScript canteen preorder p
 - GET /api/menu; administrator-only menu create/update/delete
 - POST /api/orders, GET /api/orders; administrator-only order status update
 - GET/POST /api/learning/todos; PATCH/DELETE /api/learning/todos/:id
-- GET /api/learning/quiz, POST /api/learning/quiz/submit
+- Quiz API endpoints remain available for FSD-2 practical demonstrations, but the quiz page is not linked or routed in the canteen website.
 
 ## Setup notes
 - Never commit real database credentials or session secrets.
-- Registration creates student accounts only. Promote an administrator manually in MongoDB by changing the user's role to admin.
+- Registration creates student accounts only. To promote an existing account, run `npm --prefix server run make-admin -- admin@example.com` from the repository root. The account must already be registered. Admins use the normal Sign in page; their role is checked by the API. Keep database credentials private.
 - The seed command clears and recreates menu and quiz collections; run it only when you intend to reset those collections.
 - This is an educational project, not a payment-processing system.
 - The original HTML pages are retained while migration and verification continue.
