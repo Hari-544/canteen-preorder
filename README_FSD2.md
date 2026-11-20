@@ -15,8 +15,9 @@ This branch upgrades the original HTML/CSS/Vanilla JavaScript canteen preorder p
 3. Install frontend dependencies: `npm --prefix client install`
 4. Copy `.env.example` to `server/.env`.
 5. Set `MONGODB_URI` and a long random `SESSION_SECRET` in `server/.env`.
-6. Start both apps: `npm run dev`
-7. Open http://localhost:5173. API health: http://localhost:5000/api/health
+6. Seed the menu and quiz data: `npm --prefix server run seed`
+7. Start both apps: `npm run dev`
+8. Open http://localhost:5173. API health: http://localhost:5000/api/health
 
 ## API routes
 - POST /api/auth/register, POST /api/auth/login, GET /api/auth/me, POST /api/auth/logout
@@ -28,7 +29,7 @@ This branch upgrades the original HTML/CSS/Vanilla JavaScript canteen preorder p
 ## Setup notes
 - Never commit real database credentials or session secrets.
 - Registration creates student accounts only. Promote an administrator manually in MongoDB by changing the user's role to admin.
-- Seed menu items and quiz questions before use; seed tooling is part of the next setup step.
+- The seed command clears and recreates menu and quiz collections; run it only when you intend to reset those collections.
 - This is an educational project, not a payment-processing system.
 - The original HTML pages are retained while migration and verification continue.
 
