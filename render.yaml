@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: canteen-preorder-api
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm --prefix client install && npm --prefix server install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
