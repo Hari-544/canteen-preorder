@@ -1,26 +1,29 @@
-# 🍔 Canteen Pre-Order System
+# 🍔 Canteen Pre-Order System — FSD-2
 
-> **FSD-2 upgrade in progress:** The `fsd2-upgrade` branch adds a React + TypeScript frontend, Node.js + Express API, MongoDB/Mongoose models, session authentication, and practical To-do/Quiz modules. See [README_FSD2.md](README_FSD2.md) for setup and API instructions. The original static app is preserved below while the migration is completed.
+A full-stack college canteen preorder application built with React, TypeScript, Node.js, Express and MongoDB Atlas.
 
-## 📌 Overview
+## Features
+- Student registration, login and profile management
+- Admin authentication and protected administration features
+- Menu browsing and management
+- Cart, order placement, order confirmation and order history
+- Admin order/customer details and order-status management
+- To-do practical module and FSD-2 practical demonstrations
 
-The **Canteen Pre-Order System** is a student-facing application for ordering food from a college canteen in advance, reducing waiting time and enabling faster pickup.
+## Technology
+- Frontend: React, TypeScript, Vite, React Router and Axios
+- Backend: Node.js, Express, TypeScript and express-session
+- Database: MongoDB Atlas with Mongoose
+- Hosting: Vercel (frontend) and Render (backend)
 
-The original version is built with **HTML, CSS, and Vanilla JavaScript**, using browser storage. The FSD-2 branch introduces a backend-backed full-stack version.
+## Run locally
+1. Install Node.js LTS.
+2. Run `npm install`, `npm --prefix client install` and `npm --prefix server install`.
+3. Copy `server/.env.example` to `server/.env` and set your MongoDB URI and session secret.
+4. Run `npm run dev`.
+5. Open http://localhost:5173. API health: http://localhost:5000/api/health.
 
-## 🚀 Original Features
-- Student details entry and profile management
-- Menu browsing, categories and search
-- Cart management and automatic total calculation
-- Pickup time selection and payment option selection
-- Order placement, ticket generation and order history
+See [README_FSD2.md](README_FSD2.md) for API and feature notes, and [DEPLOYMENT.md](DEPLOYMENT.md) for production deployment.
 
-## 🛠️ Original Tech Stack
-- HTML5, CSS3, Vanilla JavaScript
-- localStorage and sessionStorage
-
-## 🌍 Original Live Demo
-https://hari-544.github.io/canteen-preorder/
-
-## 👨‍💻 Author
-Hari Krishna — B.Tech (AI & ML Student)
+## Security
+Never commit `.env` files, MongoDB credentials or session secrets. Registration creates student accounts; promote an existing account to admin with `npm --prefix server run make-admin -- admin@example.com`.
