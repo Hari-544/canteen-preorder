@@ -1,184 +1,26 @@
 # 🍔 Canteen Pre-Order System
 
+> **FSD-2 upgrade in progress:** The `fsd2-upgrade` branch adds a React + TypeScript frontend, Node.js + Express API, MongoDB/Mongoose models, session authentication, and practical To-do/Quiz modules. See [README_FSD2.md](README_FSD2.md) for setup and API instructions. The original static app is preserved below while the migration is completed.
+
 ## 📌 Overview
 
-The **Canteen Pre-Order System** is a frontend-based web application that allows students to order food from the college canteen in advance. This helps reduce waiting time and enables faster food pickup.
+The **Canteen Pre-Order System** is a student-facing application for ordering food from a college canteen in advance, reducing waiting time and enabling faster pickup.
 
-This application is fully built using **HTML, CSS, and JavaScript**, and all data is handled using **browser storage (localStorage & sessionStorage)** without any backend.
+The original version is built with **HTML, CSS, and Vanilla JavaScript**, using browser storage. The FSD-2 branch introduces a backend-backed full-stack version.
 
----
+## 🚀 Original Features
+- Student details entry and profile management
+- Menu browsing, categories and search
+- Cart management and automatic total calculation
+- Pickup time selection and payment option selection
+- Order placement, ticket generation and order history
 
-## 🚀 Features
+## 🛠️ Original Tech Stack
+- HTML5, CSS3, Vanilla JavaScript
+- localStorage and sessionStorage
 
-### 👤 Student Details Entry
-
-* Students enter:
-
-  * Name
-  * Registration Number
-  * Phone Number
-  * Email
-* Data is validated and stored in `localStorage`
-
----
-
-### 🍽️ Menu Browsing
-
-* Displays available food items
-* Organized using categories
-* Search functionality for quick access
-* Add items to cart
-
----
-
-### 🛒 Cart Management
-
-* Add items to cart
-* Increase / decrease quantity
-* Remove items
-* Automatic total calculation
-
----
-
-### ⏰ Pickup Time Selection
-
-* User selects preferred pickup time
-* Helps reduce waiting queues in canteen
-
----
-
-### 💳 Payment Options
-
-* Pay Now
-* Pay at Pickup
-
----
-
-### 🎟️ Order Placement & Ticket Generation
-
-* Generates a unique Order ID
-* Displays:
-
-  * Student details
-  * Ordered items
-  * Total amount
-  * Pickup time
-  * Payment status
-
----
-
-### 📜 Order History
-
-* Stores all previous orders
-* View past tickets
-* Open specific order details
-
----
-
-### 👤 Profile Management
-
-* Update student details
-* Syncs updated data across orders
-
----
-
-## 🛠️ Tech Stack
-
-* **HTML5** – Structure
-* **CSS3** – Styling
-* **JavaScript (Vanilla)** – Functionality
-* **localStorage** – Persistent data
-* **sessionStorage** – Temporary state
-
----
-
-## 📂 Project Structure
-
-```id="xz0pxw"
-CANTEEN PRE-ORDER/
-│
-├── index.html        # Student details page
-├── menu.html         # Food menu page
-├── cart.html         # Cart & checkout
-├── ticket.html       # Order ticket
-├── orders.html       # Order history
-├── profile.html      # Profile management
-├── style.css         # Styling
-└── script.js         # Application logic
-```
-
----
-
-## 🔄 Application Workflow
-
-1. **Student enters details**
-
-   * Stored in `localStorage` under `student`
-
-2. **Menu is displayed**
-
-   * Items loaded from JavaScript array
-   * User adds items to cart
-
-3. **Cart is managed**
-
-   * Quantity updates and total calculation
-
-4. **Order is placed**
-
-   * Pickup time + payment method selected
-   * Order object is created
-
-5. **Ticket is generated**
-
-   * Shows complete order summary
-
-6. **Order history is stored**
-
-   * Saved in `localStorage` under `orders`
-
----
-
-## 💾 Storage Design
-
-### localStorage
-
-* `student` → Student details
-* `cart` → Current cart items
-* `order` → Latest order
-* `orders` → Order history
-
-### sessionStorage
-
-* `selectedOrderId` → Selected order for ticket view
-
----
-
-## 🌍 Live Demo
-
-👉 https://hari-544.github.io/canteen-preorder/
-
----
-
-## 🎯 Future Improvements
-
-* Backend integration (Node.js / Firebase)
-* Online payment gateway
-* Real-time order tracking
-* Admin dashboard
-* QR code-based pickup system
-
----
+## 🌍 Original Live Demo
+https://hari-544.github.io/canteen-preorder/
 
 ## 👨‍💻 Author
-
-**Hari Krishna**
-B.Tech (AI & ML Student)
-
----
-
-## 📢 Conclusion
-
-This project demonstrates a real-world food ordering workflow implemented entirely using frontend technologies. It improves efficiency in canteen services and showcases practical web development skills.
-
----
+Hari Krishna — B.Tech (AI & ML Student)
