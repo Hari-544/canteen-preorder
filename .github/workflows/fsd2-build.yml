@@ -1,0 +1,23 @@
+name: FSD-2 build
+on:
+  push:
+    branches: [main, fsd2-upgrade]
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install root tools
+        run: npm install
+      - name: Install server dependencies
+        run: npm --prefix server install
+      - name: Install client dependencies
+        run: npm --prefix client install
+      - name: Build frontend and backend
+        run: npm run build
