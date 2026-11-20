@@ -1,6 +1,7 @@
 import { Router } from "express";
 import Order from "../models/Order";
 import MenuItem from "../models/MenuItem";
+import User from "../models/User";
 import { requireAuth, requireAdmin } from "../middleware/auth";
 
 const router = Router();
@@ -17,6 +18,12 @@ router.post("/", async (req, res, next) => {
       res.status(400).json({ message: "Cart items and pickup slot are required." });
       return;
     }
+    const customer = await User.findById(req.session.userId).select("name email phone studentId department yearOfStudy");
+    if (!customer) { res.status(401).json({ message: "Please sign in again." }); return; }
+    if (!customer.phone?.trim() || !customer.studentId?.trim() || !customer.department?.trim() || !customer.yearOfStudy?.trim()) {
+      res.status(400).json({ message: "Please complete your profile (phone, student ID, department and year) before placing an order." });
+      return;
+    }
     const normalized = [];
     for (const entry of items) {
       if (!Number.isInteger(entry.quantity) || entry.quantity < 1) {
@@ -29,8 +36,12 @@ router.post("/", async (req, res, next) => {
     }
     const total = normalized.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const order = await Order.create({
-      user: req.session.userId, items: normalized, pickupSlot,
-      paymentMethod: paymentMethod ?? "Pay at Pickup", total
+      user: req.session.userId,
+      customer: {
+        name: customer.name, email: customer.email, phone: customer.phone,
+        studentId: customer.studentId, department: customer.department, yearOfStudy: customer.yearOfStudy
+      },
+      items: normalized, pickupSlot, paymentMethod: paymentMethod ?? "Pay at Pickup", total
     });
     res.status(201).json(order);
   } catch (error) { next(error); }
