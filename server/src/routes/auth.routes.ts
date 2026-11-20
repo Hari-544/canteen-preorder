@@ -1,6 +1,7 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
 import User from "../models/User";
+import { requireAuth } from "../middleware/auth";
 
 const router = Router();
 
@@ -44,7 +45,35 @@ router.post("/login", async (req, res, next) => {
 router.get("/me", async (req, res, next) => {
   try {
     if (!req.session.userId) { res.json({ user: null }); return; }
-    const user = await User.findById(req.session.userId).select("name email role");
+    const user = await User.findById(req.session.userId).select("name email role phone studentId department yearOfStudy");
+    res.json({ user });
+  } catch (error) { next(error); }
+});
+
+router.patch("/profile", requireAuth, async (req, res, next) => {
+  try {
+    const { name, email, phone, studentId, department, yearOfStudy } = req.body as {
+      name?: string; email?: string; phone?: string; studentId?: string;
+      department?: string; yearOfStudy?: string;
+    };
+    if (!name?.trim() || !email?.trim()) {
+      res.status(400).json({ message: "Name and email are required." });
+      return;
+    }
+    const normalizedEmail = email.trim().toLowerCase();
+    const duplicate = await User.exists({ email: normalizedEmail, _id: { $ne: req.session.userId } });
+    if (duplicate) {
+      res.status(409).json({ message: "That email address is already used by another account." });
+      return;
+    }
+    const user = await User.findByIdAndUpdate(req.session.userId, {
+      $set: {
+        name: name.trim(), email: normalizedEmail,
+        phone: (phone ?? "").trim(), studentId: (studentId ?? "").trim(),
+        department: (department ?? "").trim(), yearOfStudy: (yearOfStudy ?? "").trim()
+      }
+    }, { new: true, runValidators: true }).select("name email role phone studentId department yearOfStudy");
+    if (!user) { res.status(404).json({ message: "Account not found." }); return; }
     res.json({ user });
   } catch (error) { next(error); }
 });
