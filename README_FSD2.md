@@ -34,3 +34,12 @@ This branch upgrades the original HTML/CSS/Vanilla JavaScript canteen preorder p
 - The original HTML pages are retained while migration and verification continue.
 
 See [practicals/README.md](practicals/README.md) for the syllabus coverage map.
+
+## Student profiles and order customer details
+
+- Students can open **My Profile** and update their name, email, phone, student ID, department and year of study.
+- Phone, student ID, department and year of study must be completed before an order can be submitted.
+- Each new order stores a snapshot of the student's profile at checkout. Later profile edits do not rewrite previous order records.
+- The student sees an order confirmation with the order ID, time, pickup slot, total and initial status.
+- Admins can review customer contact/student details and order items in **All Orders**. The admin order list refreshes automatically every 15 seconds.
+- Existing orders created before this feature may not have a customer profile snapshot; their available account name and email are shown as a fallback.
